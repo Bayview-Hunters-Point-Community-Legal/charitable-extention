@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: 		Charitable - Divi Connect
+ * Plugin Name: 		Charitable - Extension Connect
  * Plugin URI:
  * Description:
  * Version: 			0.2.1
