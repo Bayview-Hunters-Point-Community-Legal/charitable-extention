@@ -1,6 +1,6 @@
 <?php
 /**
- * Sets up translations for Charitable Divi Connect.
+ * Sets up translations for Charitable Extension Connect.
  *
  * @package     Charitable/Classes/Charitable_i18n
  * @version     0.1.0
@@ -17,19 +17,19 @@ if ( ! class_exists( 'Charitable_i18n' ) ) :
     return;
 endif;
 
-if ( ! class_exists( 'Charitable_Divi_i18n' ) ) : 
+if ( ! class_exists( 'Charitable_Extension_i18n' ) ) : 
 
 /**
- * Charitable_Divi_i18n
+ * Charitable_Extension_i18n
  *
  * @since       0.1.0
  */
-class Charitable_Divi_i18n extends Charitable_i18n {
+class Charitable_Extension_i18n extends Charitable_i18n {
 
     /**
      * @var     string
      */
-    protected $textdomain = 'charitable-divi';
+    protected $textdomain = 'charitable-extension';
 
     /**
      * Set up the class. 
@@ -38,7 +38,7 @@ class Charitable_Divi_i18n extends Charitable_i18n {
      * @since   0.1.0
      */
     protected function __construct() {
-        $this->languages_directory = apply_filters( 'charitable_divi_languages_directory', 'charitable-divi/languages' );
+        $this->languages_directory = apply_filters( 'charitable_extension_languages_directory', 'charitable-extension/languages' );
         $this->locale = apply_filters( 'plugin_locale', get_locale(), $this->textdomain );
         $this->mofile = sprintf( '%1$s-%2$s.mo', $this->textdomain, $this->locale );
 

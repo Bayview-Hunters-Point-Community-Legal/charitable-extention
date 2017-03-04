@@ -2,27 +2,27 @@
 /**
  * The class responsible for adding & saving extra settings in the Charitable admin.
  *
- * @package     Charitable Divi Connect/Classes/Charitable_Divi_Admin
+ * @package     Charitable Extension Connect/Classes/Charitable_Extension_Admin
  * @version     0.1.0
  * @author      Eric Daams
  * @copyright   Copyright (c) 2015, Studio 164a
- * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License  
+ * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-if ( ! class_exists( 'Charitable_Divi_Admin' ) ) : 
+if ( ! class_exists( 'Charitable_Extension_Admin' ) ) :
 
 /**
- * Charitable_Divi_Admin
+ * Charitable_Extension_Admin
  *
  * @since       0.1.0
  */
-class Charitable_Divi_Admin {
+class Charitable_Extension_Admin {
 
     /**
-     * @var     Charitable_Divi_Admin
+     * @var     Charitable_Extension_Admin
      * @access  private
      * @static
      * @since   0.1.0
@@ -30,8 +30,8 @@ class Charitable_Divi_Admin {
     private static $instance = null;
 
     /**
-     * Create class object. Private constructor. 
-     * 
+     * Create class object. Private constructor.
+     *
      * @access  private
      * @since   0.1.0
      */
@@ -47,14 +47,14 @@ class Charitable_Divi_Admin {
      */
     public static function get_instance() {
         if ( is_null( self::$instance ) ) {
-            self::$instance = new Charitable_Divi_Admin();            
+            self::$instance = new Charitable_Extension_Admin();
         }
 
         return self::$instance;
-    }    
+    }
 
     /**
-     * Add custom links to the plugin actions. 
+     * Add custom links to the plugin actions.
      *
      * @param   string[] $links
      * @return  string[]

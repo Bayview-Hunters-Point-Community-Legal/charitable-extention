@@ -1,9 +1,9 @@
 <?php
 /**
- * Charitable Divi Connect template
+ * Charitable Extension Connect template
  *
  * @version     0.1.0
- * @package     Charitable Divi Connect/Classes/Charitable_Divi_Template
+ * @package     Charitable Extension Connect/Classes/Charitable_Extension_Template
  * @author      Eric Daams
  * @copyright   Copyright (c) 2015, Studio 164a
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License  
@@ -11,14 +11,14 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if ( ! class_exists( 'Charitable_Divi_Template' ) ) : 
+if ( ! class_exists( 'Charitable_Extension_Template' ) ) : 
 
 /**
- * Charitable_Divi_Template
+ * Charitable_Extension_Template
  *
  * @since       0.1.0
  */
-class Charitable_Divi_Template extends Charitable_Template {
+class Charitable_Extension_Template extends Charitable_Template {
     
     /**
      * Set theme template path. 
@@ -28,7 +28,7 @@ class Charitable_Divi_Template extends Charitable_Template {
      * @since   0.1.0
      */
     public function get_theme_template_path() {
-        return trailingslashit( apply_filters( 'charitable_divi_theme_template_path', 'charitable/charitable-divi' ) );
+        return trailingslashit( apply_filters( 'charitable_extension_theme_template_path', 'charitable/charitable-extension' ) );
     }
 
     /**
@@ -39,7 +39,7 @@ class Charitable_Divi_Template extends Charitable_Template {
      * @since   0.1.0
      */
     public function get_base_template_path() {
-        return charitable_divi()->get_path( 'templates' );
+        return charitable_extension()->get_path( 'templates' );
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php 
 
-class Charitable_Divi_Campaign_Stats_Module extends ET_Builder_Module {
+class Charitable_Extension_Campaign_Stats_Module extends ET_Builder_Module {
 
     function init() {
         $this->name = esc_html__( 'Campaign Stats', 'et_builder' );

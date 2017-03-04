@@ -2,7 +2,7 @@
 /**
  * Displays the campaign featured image.
  *
- * Override this template by copying it to yourtheme/charitable/charitable-divi/campaign/featured-image.php
+ * Override this template by copying it to yourtheme/charitable/charitable-extension/campaign/featured-image.php
  * 
  * @author  Studio 164a
  * @since   0.1.0

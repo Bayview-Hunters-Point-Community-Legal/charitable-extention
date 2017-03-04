@@ -1,8 +1,8 @@
 <?php
 /**
- * Charitable Divi Public class.
+ * Charitable Extension Public class.
  *
- * @package     Charitable Divi/Classes/Charitable_Divi_Public
+ * @package     Charitable Extension/Classes/Charitable_Extension_Public
  * @version     0.1.0
  * @author      Eric Daams
  * @copyright   Copyright (c) 2015, Studio 164a
@@ -11,7 +11,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly
 
-if ( ! class_exists( 'Charitable_Divi_Public' ) ) :
+if ( ! class_exists( 'Charitable_Extension_Public' ) ) :
 
 	/**
 	 * Charitable Public class.
@@ -19,12 +19,12 @@ if ( ! class_exists( 'Charitable_Divi_Public' ) ) :
 	 * @final
 	 * @since       0.1.0
 	 */
-	final class Charitable_Divi_Public {
+	final class Charitable_Extension_Public {
 
 		/**
 		 * The single instance of this class.
 		 *
-		 * @var     Charitable_Divi_Public|null
+		 * @var     Charitable_Extension_Public|null
 		 * @access  private
 		 * @static
 		 */
@@ -33,13 +33,13 @@ if ( ! class_exists( 'Charitable_Divi_Public' ) ) :
 		/**
 		 * Returns and/or create the single instance of this class.
 		 *
-		 * @return  Charitable_Divi_Public
+		 * @return  Charitable_Extension_Public
 		 * @access  public
 		 * @since   0.1.0
 		 */
 		public static function get_instance() {
 			if ( is_null( self::$instance ) ) {
-				self::$instance = new Charitable_Divi_Public();
+				self::$instance = new Charitable_Extension_Public();
 			}
 
 			return self::$instance;
@@ -83,7 +83,7 @@ if ( ! class_exists( 'Charitable_Divi_Public' ) ) :
 				$template_name = 'single-campaign.php';
 			}
 
-			$divi_template = new Charitable_Divi_Template( $template_name, false );
+			$divi_template = new Charitable_Extension_Template( $template_name, false );
 			$divi_template = $divi_template->locate_template();
 
 			if ( is_readable( $divi_template ) ) {
@@ -143,10 +143,10 @@ if ( ! class_exists( 'Charitable_Divi_Public' ) ) :
 		 */
 		public function load_dependencies() {
 
-			$includes_path = charitable_divi()->get_path( 'includes' ) . 'public/';
+			$includes_path = charitable_extension()->get_path( 'includes' ) . 'public/';
 
-			require_once( $includes_path . 'charitable-divi-template-functions.php' );
-			require_once( $includes_path . 'charitable-divi-template-hooks.php' );
+			require_once( $includes_path . 'charitable-extension-template-functions.php' );
+			require_once( $includes_path . 'charitable-extension-template-hooks.php' );
 		}
 
 		/**
@@ -178,10 +178,10 @@ if ( ! class_exists( 'Charitable_Divi_Public' ) ) :
 
 			list( $suffix, $version ) = $this->get_asset_versions();
 
-			$assets_dir = charitable_divi()->get_path( 'assets', false );
+			$assets_dir = charitable_extension()->get_path( 'assets', false );
 
-			wp_register_style( 'charitable-divi-styles', $assets_dir . 'css/charitable-divi' . $suffix . '.css', array( 'charitable-styles' ), $version );
-			wp_enqueue_style( 'charitable-divi-styles' );
+			wp_register_style( 'charitable-extension-styles', $assets_dir . 'css/charitable-extension' . $suffix . '.css', array( 'charitable-styles' ), $version );
+			wp_enqueue_style( 'charitable-extension-styles' );
 		}
 
 		/**
@@ -204,7 +204,7 @@ if ( ! class_exists( 'Charitable_Divi_Public' ) ) :
 
 			return array(
 				'.min',
-				charitable_divi()->get_version(),
+				charitable_extension()->get_version(),
 			);
 		}
 	}

@@ -2,7 +2,7 @@
 /**
  * The class responsible for adding & saving extra settings in the Charitable Customizer.
  *
- * @package     Charitable Divi Connect/Classes/Charitable_Divi_Customizer
+ * @package     Charitable Extension Connect/Classes/Charitable_Extension_Customizer
  * @version     0.1.0
  * @author      Eric Daams
  * @copyright   Copyright (c) 2015, Studio 164a
@@ -12,17 +12,17 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-if ( ! class_exists( 'Charitable_Divi_Customizer' ) ) : 
+if ( ! class_exists( 'Charitable_Extension_Customizer' ) ) : 
 
 /**
- * Charitable_Divi_Customizer
+ * Charitable_Extension_Customizer
  *
  * @since       0.1.0
  */
-class Charitable_Divi_Customizer {
+class Charitable_Extension_Customizer {
 
     /**
-     * @var     Charitable_Divi_Customizer
+     * @var     Charitable_Extension_Customizer
      * @access  private
      * @static
      * @since   0.1.0
@@ -47,7 +47,7 @@ class Charitable_Divi_Customizer {
      */
     public static function get_instance() {
         if ( is_null( self::$instance ) ) {
-            self::$instance = new Charitable_Divi_Customizer();            
+            self::$instance = new Charitable_Extension_Customizer();            
         }
 
         return self::$instance;
@@ -66,7 +66,7 @@ class Charitable_Divi_Customizer {
         if ( ! isset( $settings[ 'sections' ][ 'charitable_design' ] ) ) {
 
             $settings[ 'sections' ][ 'charitable_design' ] = array(
-                'title'     => __( 'Design Options', 'charitable-divi' ),
+                'title'     => __( 'Design Options', 'charitable-extension' ),
                 'priority'  => 1010,
                 'settings'  => array()
             );
@@ -82,11 +82,11 @@ class Charitable_Divi_Customizer {
         //     'control' => array(
         //         'type'          => 'select',
         //         'priority'      => 1112,
-        //         'label'         => __( 'Layout for campaign pages', 'charitable-divi' ), 
+        //         'label'         => __( 'Layout for campaign pages', 'charitable-extension' ), 
         //         'choices'       => array(
-        //             'right-sidebar' => __( 'Right Sidebar', 'charitable-divi' ), 
-        //             'left-sidebar'  => __( 'Left Sidebar', 'charitable-divi' ),
-        //             'full-width'    => __( 'Full Width (fullwidth widgets)', 'charitable-divi' )
+        //             'right-sidebar' => __( 'Right Sidebar', 'charitable-extension' ), 
+        //             'left-sidebar'  => __( 'Left Sidebar', 'charitable-extension' ),
+        //             'full-width'    => __( 'Full Width (fullwidth widgets)', 'charitable-extension' )
         //         ) 
         //     )
         // );
@@ -113,12 +113,12 @@ class Charitable_Divi_Customizer {
             'control' => array(
                 'type'          => 'select',
                 'priority'      => 1114,
-                'label'         => __( 'How is the percent raised displayed in the campaign grid?', 'charitable-divi' ), 
+                'label'         => __( 'How is the percent raised displayed in the campaign grid?', 'charitable-extension' ), 
                 'choices'       => array(
-                    'bar-counter'   => __( 'Bar Counter', 'charitable-divi' ), 
-                    'circle-counter' => __( 'Circle Counter', 'charitable-divi' ),
-                    'text'          => __( 'Text (no animation)', 'charitable-divi' ),
-                    'hidden'        => __( 'Not displayed', 'charitable-divi' )
+                    'bar-counter'   => __( 'Bar Counter', 'charitable-extension' ), 
+                    'circle-counter' => __( 'Circle Counter', 'charitable-extension' ),
+                    'text'          => __( 'Text (no animation)', 'charitable-extension' ),
+                    'hidden'        => __( 'Not displayed', 'charitable-extension' )
                 ) 
             )
         );
@@ -132,13 +132,13 @@ class Charitable_Divi_Customizer {
             'control' => array(
                 'type'          => 'select',
                 'priority'      => 1116,
-                'label'         => __( 'How is the percent raised displayed on single campaigns?', 'charitable-divi' ), 
+                'label'         => __( 'How is the percent raised displayed on single campaigns?', 'charitable-extension' ), 
                 'choices'       => array(
-                    'bar-counter'   => __( 'Bar Counter', 'charitable-divi' ), 
-                    'circle-counter' => __( 'Circle Counter', 'charitable-divi' ),
-                    'number-counter' => __( 'Number Counter', 'charitable-divi' ),
-                    'text'          => __( 'Text (no animation)', 'charitable-divi' ),
-                    'hidden'        => __( 'Not displayed', 'charitable-divi' )
+                    'bar-counter'   => __( 'Bar Counter', 'charitable-extension' ), 
+                    'circle-counter' => __( 'Circle Counter', 'charitable-extension' ),
+                    'number-counter' => __( 'Number Counter', 'charitable-extension' ),
+                    'text'          => __( 'Text (no animation)', 'charitable-extension' ),
+                    'hidden'        => __( 'Not displayed', 'charitable-extension' )
                 ) 
             )
         );
@@ -152,11 +152,11 @@ class Charitable_Divi_Customizer {
             'control' => array(
                 'type'          => 'select',
                 'priority'      => 1118,
-                'label'         => __( 'How is the time left displayed?', 'charitable-divi' ), 
+                'label'         => __( 'How is the time left displayed?', 'charitable-extension' ), 
                 'choices'       => array(
-                    'countdown' => __( 'Countdown', 'charitable-divi' ), 
-                    'text'      => __( 'Text (no animation)', 'charitable-divi' ),
-                    'hidden'    => __( 'Not displayed', 'charitable-divi' )
+                    'countdown' => __( 'Countdown', 'charitable-extension' ), 
+                    'text'      => __( 'Text (no animation)', 'charitable-extension' ),
+                    'hidden'    => __( 'Not displayed', 'charitable-extension' )
                 ) 
             )
         );

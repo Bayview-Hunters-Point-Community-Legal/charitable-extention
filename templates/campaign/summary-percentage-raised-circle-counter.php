@@ -4,7 +4,7 @@
  *
  * This is based on Divi's Circle Counter module. 
  *
- * Override this template by copying it to yourtheme/charitable/charitable-divi/campaign/summary-percentage-raised-circle-counter.php
+ * Override this template by copying it to yourtheme/charitable/charitable-extension/campaign/summary-percentage-raised-circle-counter.php
  * 
  * @author  Studio 164a
  * @since   0.1.0

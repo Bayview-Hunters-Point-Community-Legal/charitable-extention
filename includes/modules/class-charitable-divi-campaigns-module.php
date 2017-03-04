@@ -1,10 +1,10 @@
 <?php 
 
-class Charitable_Divi_Campaigns_Module extends ET_Builder_Module {
+class Charitable_Extension_Campaigns_Module extends ET_Builder_Module {
 
     function init() {
-        $this->name = esc_html__( 'Campaigns', 'charitable-divi' );
-        $this->slug = 'charitable_divi_campaigns';
+        $this->name = esc_html__( 'Campaigns', 'charitable-extension' );
+        $this->slug = 'charitable_extension_campaigns';
 
         $this->whitelisted_fields = array(
             'background_layout',
@@ -33,7 +33,7 @@ class Charitable_Divi_Campaigns_Module extends ET_Builder_Module {
         $this->advanced_options = array(
             'fonts' => array(
                 'text'   => array(
-                    'label'    => esc_html__( 'Text', 'charitable-divi' ),
+                    'label'    => esc_html__( 'Text', 'charitable-extension' ),
                     'css'      => array(
                         'line_height' => "{$this->main_css_element} p",
                     ),
@@ -63,40 +63,40 @@ class Charitable_Divi_Campaigns_Module extends ET_Builder_Module {
     function get_fields() {
         $fields = array(
             // 'type' => array(
-            //     'label'           => esc_html__( 'Type', 'charitable-divi' ),
+            //     'label'           => esc_html__( 'Type', 'charitable-extension' ),
             //     'type'            => 'select',
             //     'option_category' => 'basic_option',
             //     'options'         => array(
-            //         'recent'  => esc_html__( 'Recent Products', 'charitable-divi' ),
-            //         'featured' => esc_html__( 'Featured Products', 'charitable-divi' ),
-            //         'sale' => esc_html__( 'Sale Products', 'charitable-divi' ),
-            //         'best_selling' => esc_html__( 'Best Selling Products', 'charitable-divi' ),
-            //         'top_rated' => esc_html__( 'Top Rated Products', 'charitable-divi' ),
-            //         'product_category' => esc_html__( 'Product Category', 'charitable-divi' ),
+            //         'recent'  => esc_html__( 'Recent Products', 'charitable-extension' ),
+            //         'featured' => esc_html__( 'Featured Products', 'charitable-extension' ),
+            //         'sale' => esc_html__( 'Sale Products', 'charitable-extension' ),
+            //         'best_selling' => esc_html__( 'Best Selling Products', 'charitable-extension' ),
+            //         'top_rated' => esc_html__( 'Top Rated Products', 'charitable-extension' ),
+            //         'product_category' => esc_html__( 'Product Category', 'charitable-extension' ),
             //     ),
             //     'affects'            => array(
             //         'input[name="et_pb_include_categories"]',
             //     ),
-            //     'description'        => esc_html__( 'Choose which type of products you would like to display.', 'charitable-divi' ),
+            //     'description'        => esc_html__( 'Choose which type of products you would like to display.', 'charitable-extension' ),
             // ),
             'background_layout' => array(
-                'label'             => esc_html__( 'Text Color', 'charitable-divi' ),
+                'label'             => esc_html__( 'Text Color', 'charitable-extension' ),
                 'type'              => 'select',
                 'option_category'   => 'configuration',
                 'options'           => array(
-                    'light' => esc_html__( 'Dark', 'charitable-divi' ),
-                    'dark'  => esc_html__( 'Light', 'charitable-divi' ),
+                    'light' => esc_html__( 'Dark', 'charitable-extension' ),
+                    'dark'  => esc_html__( 'Light', 'charitable-extension' ),
                 ),
-                'description'       => esc_html__( 'Here you can choose the value of your text. If you are working with a dark background, then your text should be set to light. If you are working with a light background, then your text should be dark.', 'charitable-divi' ),
+                'description'       => esc_html__( 'Here you can choose the value of your text. If you are working with a dark background, then your text should be set to light. If you are working with a light background, then your text should be dark.', 'charitable-extension' ),
             ),
             'posts_number' => array(
-                'label'             => esc_html__( 'Campaigns Number', 'charitable-divi' ),
+                'label'             => esc_html__( 'Campaigns Number', 'charitable-extension' ),
                 'type'              => 'text',
                 'option_category'   => 'configuration',
-                'description'       => esc_html__( 'Control how many campaigns are displayed.', 'charitable-divi' ),
+                'description'       => esc_html__( 'Control how many campaigns are displayed.', 'charitable-extension' ),
             ),
             // 'include_categories'   => array(
-            //     'label'            => esc_html__( 'Include Categories', 'charitable-divi' ),
+            //     'label'            => esc_html__( 'Include Categories', 'charitable-extension' ),
             //     'type'             => 'basic_option',
             //     'renderer'         => 'et_builder_include_categories_shop_option',
             //     'renderer_options' => array(
@@ -104,54 +104,54 @@ class Charitable_Divi_Campaigns_Module extends ET_Builder_Module {
             //         'term_name'    => 'product_cat',
             //     ),
             //     'depends_show_if'  => 'product_category',
-            //     'description'      => esc_html__( 'Choose which categories you would like to include.', 'charitable-divi' ),
+            //     'description'      => esc_html__( 'Choose which categories you would like to include.', 'charitable-extension' ),
             // ),
             'columns_number' => array(
-                'label'             => esc_html__( 'Columns Number', 'charitable-divi' ),
+                'label'             => esc_html__( 'Columns Number', 'charitable-extension' ),
                 'type'              => 'select',
                 'option_category'   => 'layout',
                 'options'           => array(
-                    // '0' => esc_html__( 'default', 'charitable-divi' ),
-                    // '6' => sprintf( esc_html__( '%1$s Columns', 'charitable-divi' ), esc_html( '6' ) ),
-                    // '5' => sprintf( esc_html__( '%1$s Columns', 'charitable-divi' ), esc_html( '5' ) ),
-                    '4' => sprintf( esc_html__( '%1$s Columns', 'charitable-divi' ), esc_html( '4' ) ),
-                    '3' => sprintf( esc_html__( '%1$s Columns', 'charitable-divi' ), esc_html( '3' ) ),
-                    '2' => sprintf( esc_html__( '%1$s Columns', 'charitable-divi' ), esc_html( '2' ) ),
-                    '1' => esc_html__( '1 Column', 'charitable-divi' ),
+                    // '0' => esc_html__( 'default', 'charitable-extension' ),
+                    // '6' => sprintf( esc_html__( '%1$s Columns', 'charitable-extension' ), esc_html( '6' ) ),
+                    // '5' => sprintf( esc_html__( '%1$s Columns', 'charitable-extension' ), esc_html( '5' ) ),
+                    '4' => sprintf( esc_html__( '%1$s Columns', 'charitable-extension' ), esc_html( '4' ) ),
+                    '3' => sprintf( esc_html__( '%1$s Columns', 'charitable-extension' ), esc_html( '3' ) ),
+                    '2' => sprintf( esc_html__( '%1$s Columns', 'charitable-extension' ), esc_html( '2' ) ),
+                    '1' => esc_html__( '1 Column', 'charitable-extension' ),
                 ),
-                'description'        => esc_html__( 'Choose how many columns to display.', 'charitable-divi' ),
+                'description'        => esc_html__( 'Choose how many columns to display.', 'charitable-extension' ),
             ),
             'orderby' => array(
-                'label'             => esc_html__( 'Order By', 'charitable-divi' ),
+                'label'             => esc_html__( 'Order By', 'charitable-extension' ),
                 'type'              => 'select',
                 'option_category'   => 'configuration',
                 'options'           => array(
-                    'post_date'  => esc_html__( 'Sort by Publication Date', 'charitable-divi' ),
-                    'popular' => esc_html__( 'Sort By Amount Raised', 'charitable-divi' ),
-                    'ending' => esc_html__( 'Sort By Time Remaining', 'charitable-divi' )
+                    'post_date'  => esc_html__( 'Sort by Publication Date', 'charitable-extension' ),
+                    'popular' => esc_html__( 'Sort By Amount Raised', 'charitable-extension' ),
+                    'ending' => esc_html__( 'Sort By Time Remaining', 'charitable-extension' )
                 ),
-                'description'        => esc_html__( 'Choose how your campaigns should be ordered.', 'charitable-divi' ),
+                'description'        => esc_html__( 'Choose how your campaigns should be ordered.', 'charitable-extension' ),
             ),
             // 'sale_badge_color' => array(
-            //     'label'             => esc_html__( 'Sale Badge Color', 'charitable-divi' ),
+            //     'label'             => esc_html__( 'Sale Badge Color', 'charitable-extension' ),
             //     'type'              => 'color',
             //     'custom_color'      => true,
             //     'tab_slug'          => 'advanced',
             // ),
             // 'icon_hover_color' => array(
-            //     'label'             => esc_html__( 'Icon Hover Color', 'charitable-divi' ),
+            //     'label'             => esc_html__( 'Icon Hover Color', 'charitable-extension' ),
             //     'type'              => 'color',
             //     'custom_color'      => true,
             //     'tab_slug'          => 'advanced',
             // ),
             'hover_overlay_color' => array(
-                'label'             => esc_html__( 'Hover Overlay Color', 'charitable-divi' ),
+                'label'             => esc_html__( 'Hover Overlay Color', 'charitable-extension' ),
                 'type'              => 'color-alpha',
                 'custom_color'      => true,
                 'tab_slug'          => 'advanced',
             ),
             'hover_icon' => array(
-                'label'               => esc_html__( 'Hover Icon Picker', 'charitable-divi' ),
+                'label'               => esc_html__( 'Hover Icon Picker', 'charitable-extension' ),
                 'type'                => 'text',
                 'option_category'     => 'configuration',
                 'class'               => array( 'et-pb-font-icon' ),
@@ -160,31 +160,31 @@ class Charitable_Divi_Campaigns_Module extends ET_Builder_Module {
                 'tab_slug'            => 'advanced',
             ),
             'disabled_on' => array(
-                'label'           => esc_html__( 'Disable on', 'charitable-divi' ),
+                'label'           => esc_html__( 'Disable on', 'charitable-extension' ),
                 'type'            => 'multiple_checkboxes',
                 'options'         => array(
-                    'phone'   => esc_html__( 'Phone', 'charitable-divi' ),
-                    'tablet'  => esc_html__( 'Tablet', 'charitable-divi' ),
-                    'desktop' => esc_html__( 'Desktop', 'charitable-divi' ),
+                    'phone'   => esc_html__( 'Phone', 'charitable-extension' ),
+                    'tablet'  => esc_html__( 'Tablet', 'charitable-extension' ),
+                    'desktop' => esc_html__( 'Desktop', 'charitable-extension' ),
                 ),
                 'additional_att'  => 'disable_on',
                 'option_category' => 'configuration',
-                'description'     => esc_html__( 'This will disable the module on selected devices', 'charitable-divi' ),
+                'description'     => esc_html__( 'This will disable the module on selected devices', 'charitable-extension' ),
             ),
             'admin_label' => array(
-                'label'       => esc_html__( 'Admin Label', 'charitable-divi' ),
+                'label'       => esc_html__( 'Admin Label', 'charitable-extension' ),
                 'type'        => 'text',
-                'description' => esc_html__( 'This will change the label of the module in the builder for easy identification.', 'charitable-divi' ),
+                'description' => esc_html__( 'This will change the label of the module in the builder for easy identification.', 'charitable-extension' ),
             ),
             'module_id' => array(
-                'label'           => esc_html__( 'CSS ID', 'charitable-divi' ),
+                'label'           => esc_html__( 'CSS ID', 'charitable-extension' ),
                 'type'            => 'text',
                 'option_category' => 'configuration',
                 'tab_slug'        => 'custom_css',
                 'option_class'    => 'et_pb_custom_css_regular',
             ),
             'module_class' => array(
-                'label'           => esc_html__( 'CSS Class', 'charitable-divi' ),
+                'label'           => esc_html__( 'CSS Class', 'charitable-extension' ),
                 'type'            => 'text',
                 'option_category' => 'configuration',
                 'tab_slug'        => 'custom_css',

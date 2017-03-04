@@ -4,7 +4,7 @@
  *
  * This is based on Divi's Number Counter module. 
  *
- * Override this template by copying it to yourtheme/charitable/charitable-divi/campaign/summary-percentage-raised-number-counter.php
+ * Override this template by copying it to yourtheme/charitable/charitable-extension/campaign/summary-percentage-raised-number-counter.php
  * 
  * @author  Studio 164a
  * @since   0.1.0
@@ -22,5 +22,5 @@ wp_enqueue_script( 'easypiechart' );
 ?>
 <div class="campaign-raised campaign-summary-item campaign-raised-number-counter campaign-raised-counter et_pb_number_counter et_pb_module et_pb_bg_layout_light et_pb_number_counter_0" data-number-value="<?php echo esc_attr( $value ) ?>">
     <div class="percent" style="color: <?php echo charitable_get_option( 'highlight_colour', '#2ea3f2' ) ?>;"><p><span class="percent-value"><?php echo $percent ?></span>%</p></div>
-    <span><?php _e( 'Raised', 'charitable-divi' ) ?></span>
+    <span><?php _e( 'Raised', 'charitable-extension' ) ?></span>
 </div>

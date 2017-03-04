@@ -7,7 +7,7 @@
  * This template is based on single.php in Divi template.
  *
  * @author  Studio 164a
- * @package Charitable Divi/Templates/Donation Page
+ * @package Charitable Extension/Templates/Donation Page
  * @since   0.2.0
  * @version 0.2.0
  */

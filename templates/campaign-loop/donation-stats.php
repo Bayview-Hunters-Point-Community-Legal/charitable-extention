@@ -24,7 +24,7 @@ $classes = implode( ' ', $classes );
 ?>
 <div class="<?php echo $classes ?>">  
     <?php if ( 'text' != $display_mode ) : 
-        charitable_divi_template( 'campaign/summary-percentage-raised-' . $display_mode . '.php', array( 'campaign' => $campaign, 'round' => true ) );
+        charitable_extension_template( 'campaign/summary-percentage-raised-' . $display_mode . '.php', array( 'campaign' => $campaign, 'round' => true ) );
     endif; 
     ?>
     <p><?php echo $campaign->get_donation_summary() ?></p>

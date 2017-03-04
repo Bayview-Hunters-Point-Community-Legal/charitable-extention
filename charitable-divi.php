@@ -9,10 +9,10 @@
  * Requires at least: 	4.2
  * Tested up to: 		4.7.2
  *
- * Text Domain: 		charitable-divi
+ * Text Domain: 		charitable-extension
  * Domain Path: 		/languages/
  *
- * @package 			Charitable Divi Connect
+ * @package 			Charitable Extension Connect
  * @category 			Core
  * @author 				Studio164a
  */
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly
  * @return 	void
  * @since 	0.1.0
  */
-function charitable_divi_load() {
+function charitable_extension_load() {
 
 	/* Check for Charitable */
 	if ( ! class_exists( 'Charitable' ) ) {
@@ -43,7 +43,7 @@ function charitable_divi_load() {
 
 		// require_once 'includes/admin/class-divi-theme-activation.php';
 
-		// $activation = new Charitable_Divi_Theme_Activation( plugin_dir_path( __FILE__ ), basename( __FILE__ ) );
+		// $activation = new Charitable_Extension_Theme_Activation( plugin_dir_path( __FILE__ ), basename( __FILE__ ) );
 		// $activation = $activation->run();
 
 		// Do nothing
@@ -51,11 +51,11 @@ function charitable_divi_load() {
 
 	} else {
 
-		require_once( 'includes/class-charitable-divi.php' );
+		require_once( 'includes/class-charitable-extension.php' );
 
-		new Charitable_Divi( __FILE__ );
+		new Charitable_Extension( __FILE__ );
 
 	}
 }
 
-add_action( 'plugins_loaded', 'charitable_divi_load', 1 );
+add_action( 'plugins_loaded', 'charitable_extension_load', 1 );

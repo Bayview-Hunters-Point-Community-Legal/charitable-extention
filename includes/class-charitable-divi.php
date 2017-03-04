@@ -1,10 +1,10 @@
 <?php
 /**
- * The main Charitable Divi Connect class.
+ * The main Charitable Extension Connect class.
  *
  * The responsibility of this class is to load all the plugin's functionality.
  *
- * @package     Charitable Divi Connect
+ * @package     Charitable Extension Connect
  * @copyright   Copyright (c) 2015, Eric Daams
  * @license     http://opensource.org/licenses/gpl-1.0.0.php GNU Public License
  * @since       0.1.0
@@ -12,15 +12,15 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly
 
-if ( ! class_exists( 'Charitable_Divi' ) ) :
+if ( ! class_exists( 'Charitable_Extension' ) ) :
 
 	/**
-	 * Charitable_Divi
+	 * Charitable_Extension
 	 *
 	 * @since   0.1.0
 	 * @final
 	 */
-	final class Charitable_Divi {
+	final class Charitable_Extension {
 
 		/**
 		 * @var string
@@ -35,7 +35,7 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 		/**
 		 * @var string The product name.
 		 */
-		const NAME = 'Charitable Divi Connect';
+		const NAME = 'Charitable Extension Connect';
 
 		/**
 		 * @var string The product author.
@@ -43,7 +43,7 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 		const AUTHOR = 'Studio 164a';
 
 		/**
-		 * @var Charitable_Divi
+		 * @var Charitable_Extension
 		 */
 		private static $instance = null;
 
@@ -128,7 +128,7 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 			$this->attach_hooks_and_filters();
 
 			// Hook in here to do something when the plugin is first loaded.
-			do_action( 'charitable_divi_start', $this );
+			do_action( 'charitable_extension_start', $this );
 		}
 
 		/**
@@ -141,8 +141,8 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 		private function load_dependencies() {
 			$includes_path = $this->get_path( 'includes' );
 
-			require_once( $includes_path . 'charitable-divi-core-functions.php' );
-			require_once( $includes_path . 'admin/customizer/class-charitable-divi-customizer.php' );
+			require_once( $includes_path . 'charitable-extension-core-functions.php' );
+			require_once( $includes_path . 'admin/customizer/class-charitable-extension-customizer.php' );
 		}
 
 		/**
@@ -157,8 +157,8 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 				return;
 			}
 
-			require_once( $this->get_path( 'includes' ) . 'admin/class-charitable-divi-admin.php' );
-			require_once( $this->get_path( 'includes' ) . 'admin/charitable-divi-admin-hooks.php' );
+			require_once( $this->get_path( 'includes' ) . 'admin/class-charitable-extension-admin.php' );
+			require_once( $this->get_path( 'includes' ) . 'admin/charitable-extension-admin-hooks.php' );
 		}
 
 		/**
@@ -173,10 +173,10 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 				return;
 			}
 
-			require_once( $this->get_path( 'includes' ) . 'public/class-charitable-divi-public.php' );
-			require_once( $this->get_path( 'includes' ) . 'public/class-charitable-divi-template.php' );
+			require_once( $this->get_path( 'includes' ) . 'public/class-charitable-extension-public.php' );
+			require_once( $this->get_path( 'includes' ) . 'public/class-charitable-extension-template.php' );
 
-			Charitable_Divi_Public::get_instance();
+			Charitable_Extension_Public::get_instance();
 		}
 
 		/**
@@ -188,9 +188,9 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 		 */
 		private function setup_licensing() {
 			charitable_get_helper( 'licenses' )->register_licensed_product(
-				Charitable_Divi::NAME,
-				Charitable_Divi::AUTHOR,
-				Charitable_Divi::VERSION,
+				Charitable_Extension::NAME,
+				Charitable_Extension::AUTHOR,
+				Charitable_Extension::VERSION,
 				$this->plugin_file
 			);
 		}
@@ -205,9 +205,9 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 		private function setup_i18n() {
 			if ( class_exists( 'Charitable_i18n' ) ) {
 
-				require_once( $this->get_path( 'includes' ) . 'i18n/class-charitable-divi-i18n.php' );
+				require_once( $this->get_path( 'includes' ) . 'i18n/class-charitable-extension-i18n.php' );
 
-				Charitable_Divi_i18n::get_instance();
+				Charitable_Extension_i18n::get_instance();
 			}
 		}
 
@@ -219,14 +219,14 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 		 * @since   0.1.0
 		 */
 		private function maybe_upgrade() {
-			$db_version = get_option( 'charitable_divi_version' );
+			$db_version = get_option( 'charitable_extension_version' );
 
 			if ( self::VERSION !== $db_version ) {
 
 				require_once( charitable()->get_path( 'admin' ) . 'upgrades/class-charitable-upgrade.php' );
-				require_once( $this->get_path( 'includes' ) . 'admin/upgrades/class-charitable-divi-upgrade.php' );
+				require_once( $this->get_path( 'includes' ) . 'admin/upgrades/class-charitable-extension-upgrade.php' );
 
-				Charitable_Divi_Upgrade::upgrade_from( $db_version, self::VERSION );
+				Charitable_Extension_Upgrade::upgrade_from( $db_version, self::VERSION );
 			}
 		}
 
@@ -238,7 +238,7 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 		 * @since   0.1.0
 		 */
 		private function attach_hooks_and_filters() {
-			add_filter( 'charitable_customizer_fields', array( Charitable_Divi_Customizer::get_instance(), 'add_customizer_settings' ) );
+			add_filter( 'charitable_customizer_fields', array( Charitable_Extension_Customizer::get_instance(), 'add_customizer_settings' ) );
 			add_filter( 'charitable_default_highlight_colour', array( $this, 'set_divi_highlight_colour' ) );
 			// add_action( 'et_builder_ready', array( $this, 'load_divi_modules' ) );
 			add_action( 'widgets_init', array( $this, 'register_widget_area' ) );
@@ -263,11 +263,11 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 		 * @since   0.1.0
 		 */
 		public function load_divi_modules() {
-			// require_once( $this->get_path( 'includes' ) . 'modules/class-charitable-divi-campaigns-module.php' );
-			// require_once( $this->get_path( 'includes' ) . 'modules/class-charitable-divi-campaign-stats-module.php' );
+			// require_once( $this->get_path( 'includes' ) . 'modules/class-charitable-extension-campaigns-module.php' );
+			// require_once( $this->get_path( 'includes' ) . 'modules/class-charitable-extension-campaign-stats-module.php' );
 
 			// Instantiate all of the modules
-			// new Charitable_Divi_Campaigns_Module();
+			// new Charitable_Extension_Campaigns_Module();
 		}
 
 		/**
@@ -280,8 +280,8 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 		public function register_widget_area() {
 			register_sidebar( array(
 				'id'            => 'charitable_campaign',
-				'name'          => __( 'Campaign After Content', 'charitable-divi' ),
-				'description'   => __( 'Displayed below the campaign\'s content, but above the comment section.', 'charitable-divi' ),
+				'name'          => __( 'Campaign After Content', 'charitable-extension' ),
+				'description'   => __( 'Displayed below the campaign\'s content, but above the comment section.', 'charitable-extension' ),
 				'before_widget' => '<aside id="%1$s" class="et_pb_widget %2$s">',
 				'after_widget'  => '</aside>',
 				'before_title'  => '<h4 class="widgettitle">',
@@ -297,7 +297,7 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 		 * @since   0.1.0
 		 */
 		public function is_start() {
-			return current_filter() == 'charitable_divi_start';
+			return current_filter() == 'charitable_extension_start';
 		}
 
 		/**
@@ -308,7 +308,7 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 		 * @since   0.1.0
 		 */
 		public function started() {
-			return did_action( 'charitable_divi_start' ) || current_filter() == 'charitable_divi_start';
+			return did_action( 'charitable_extension_start' ) || current_filter() == 'charitable_extension_start';
 		}
 
 		/**
@@ -367,7 +367,7 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 		 * @return  void
 		 */
 		public function __clone() {
-			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'charitable-divi' ), '1.0.0' );
+			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'charitable-extension' ), '1.0.0' );
 		}
 
 		/**
@@ -378,7 +378,7 @@ if ( ! class_exists( 'Charitable_Divi' ) ) :
 		 * @return  void
 		 */
 		public function __wakeup() {
-			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'charitable-divi' ), '1.0.0' );
+			_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'charitable-extension' ), '1.0.0' );
 		}
 	}
 

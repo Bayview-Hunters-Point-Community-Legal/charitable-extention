@@ -4,7 +4,7 @@
  *
  * This is based on Divi's Bar Counter module. 
  *
- * Override this template by copying it to yourtheme/charitable/charitable-divi/campaign/summary-percentage-raised-bar-counter.php
+ * Override this template by copying it to yourtheme/charitable/charitable-extension/campaign/summary-percentage-raised-bar-counter.php
  * 
  * @author  Studio 164a
  * @since   0.1.0

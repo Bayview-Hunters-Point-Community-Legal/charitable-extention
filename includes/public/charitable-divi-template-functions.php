@@ -1,8 +1,8 @@
 <?php 
 /**
- * Charitable Divi Template Functions. 
+ * Charitable Extension Template Functions. 
  * 
- * @package     Charitable Divi/Functions/Templates
+ * @package     Charitable Extension/Functions/Templates
  * @version     0.1.0
  * @author      Eric Daams
  * @copyright   Copyright (c) 2015, Studio 164a
@@ -11,7 +11,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if ( ! function_exists( 'charitable_divi_template_campaign_featured_image' ) ) : 
+if ( ! function_exists( 'charitable_extension_template_campaign_featured_image' ) ) : 
 
     /**
      * Display the featured image for the campaign.
@@ -19,19 +19,19 @@ if ( ! function_exists( 'charitable_divi_template_campaign_featured_image' ) ) :
      * @return  boolean True if the template was displayed. False otherwise.
      * @since   0.1.0
      */
-    function charitable_divi_template_campaign_featured_image() {
+    function charitable_extension_template_campaign_featured_image() {
         if ( ! has_post_thumbnail() ) {
             return false;
         }
 
-        charitable_divi_template( 'campaign/featured-image.php' );
+        charitable_extension_template( 'campaign/featured-image.php' );
 
         return true;
     }
 
 endif;
 
-if ( ! function_exists( 'charitable_divi_template_campaign_summary' ) ) : 
+if ( ! function_exists( 'charitable_extension_template_campaign_summary' ) ) : 
 
     /**
      * Display the summary section.
@@ -40,14 +40,14 @@ if ( ! function_exists( 'charitable_divi_template_campaign_summary' ) ) :
      * @return  true
      * @since   0.1.0
      */
-    function charitable_divi_template_campaign_summary( $campaign ) {
-        charitable_divi_template( 'campaign/summary.php', array( 'campaign' => $campaign ) );
+    function charitable_extension_template_campaign_summary( $campaign ) {
+        charitable_extension_template( 'campaign/summary.php', array( 'campaign' => $campaign ) );
         return true;
     }
 
 endif;
 
-if ( ! function_exists( 'charitable_divi_template_campaign_percentage_raised' ) ) :
+if ( ! function_exists( 'charitable_extension_template_campaign_percentage_raised' ) ) :
 
     /**
      * Display the percentage that the campaign has raised in summary block. 
@@ -56,7 +56,7 @@ if ( ! function_exists( 'charitable_divi_template_campaign_percentage_raised' ) 
      * @return  boolean     True if the template was displayed. False otherwise.
      * @since   0.1.0
      */
-    function charitable_divi_template_campaign_percentage_raised( $campaign ) {
+    function charitable_extension_template_campaign_percentage_raised( $campaign ) {
         if ( ! $campaign->has_goal() ) {
             return false;
         }
@@ -72,14 +72,14 @@ if ( ! function_exists( 'charitable_divi_template_campaign_percentage_raised' ) 
             return true;
         }
 
-        charitable_divi_template( 'campaign/summary-percentage-raised-' . $display_mode . '.php', array( 'campaign' => $campaign ) );
+        charitable_extension_template( 'campaign/summary-percentage-raised-' . $display_mode . '.php', array( 'campaign' => $campaign ) );
 
         return true;
     }
 
 endif;
 
-if ( ! function_exists( 'charitable_divi_template_campaign_time_left' ) ) :
+if ( ! function_exists( 'charitable_extension_template_campaign_time_left' ) ) :
 
     /**
      * Display the time remaining for the campaign.
@@ -88,7 +88,7 @@ if ( ! function_exists( 'charitable_divi_template_campaign_time_left' ) ) :
      * @return  boolean True if the template was displayed. False otherwise.
      * @since   0.1.0
      */
-    function charitable_divi_template_campaign_time_left( $campaign ) {
+    function charitable_extension_template_campaign_time_left( $campaign ) {
         if ( $campaign->is_endless() ) {
             return false;
         }
@@ -104,7 +104,7 @@ if ( ! function_exists( 'charitable_divi_template_campaign_time_left' ) ) :
             return true;
         }
 
-        charitable_divi_template( 'campaign/summary-time-left-countdown.php', array( 'campaign' => $campaign ) );
+        charitable_extension_template( 'campaign/summary-time-left-countdown.php', array( 'campaign' => $campaign ) );
 
         return true;
     }
@@ -112,7 +112,7 @@ if ( ! function_exists( 'charitable_divi_template_campaign_time_left' ) ) :
 endif;
 
 
-if ( ! function_exists( 'charitable_divi_template_campaign_loop_donation_stats' ) ) :
+if ( ! function_exists( 'charitable_extension_template_campaign_loop_donation_stats' ) ) :
 
     /**
      * Display the donation stats within the campaign grid.
@@ -121,8 +121,8 @@ if ( ! function_exists( 'charitable_divi_template_campaign_loop_donation_stats' 
      * @return  void
      * @since   0.1.0
      */
-    function charitable_divi_template_campaign_loop_donation_stats( $campaign ) {
-        charitable_divi_template( 'campaign-loop/donation-stats.php', array( 'campaign' => $campaign ) );    
+    function charitable_extension_template_campaign_loop_donation_stats( $campaign ) {
+        charitable_extension_template( 'campaign-loop/donation-stats.php', array( 'campaign' => $campaign ) );    
     }
 
 endif;
