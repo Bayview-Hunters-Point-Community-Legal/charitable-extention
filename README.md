@@ -8,5 +8,8 @@ https://codex.wordpress.org/Writing_a_Plugin#Creating_a_Plugin
 
 ## Install
 
-- Download zip from github
-- Plugins -> Add New --> Upload
+- Package zip: `zip -r charitable-extension.zip charitable-extension -x *.git*`
+- Plugins -> `Charitable - Extension` -> Deactivate
+- Plugins -> `Charitable - Extension` -> Delete
+- Plugins -> Add New --> Upload zip
+- Click activate
