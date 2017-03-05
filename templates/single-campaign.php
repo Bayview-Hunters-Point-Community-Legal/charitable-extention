@@ -26,6 +26,25 @@ $campaign = charitable_get_current_campaign();
 ?>
 <div id="main-content">
 	<div class="container">
+
+		<!-- <div style="
+		    background: url(&quot;https://bhpcommunitylegal.org/wp-content/uploads/2017/01/Miranda-1080x675.png&quot;);
+		    position: relative;
+		    height: 400px;
+		    background-size: cover;
+		    background-repeat: no-repeat;
+		    ">
+
+		  	<h1 class="entry-title" style="
+		    position: absolute;
+		    bottom: 10px;
+		    left: 10px;
+		    color: white;
+		    box-shadow: black;
+		    /* background: red; */
+		    text-shadow: 1px 1px #000000;
+		">Lena is ready to leave everything behind to keep her family safe.</h1></div> -->
+
 		<div id="content-area" class="clearfix">
 			<div id="left-area">
 			<?php while ( have_posts() ) : the_post(); ?>
