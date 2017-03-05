@@ -16,23 +16,24 @@ $thumbnail = get_thumbnail( $width, $height, $classtext, $titletext, $titletext,
 $thumb = $thumbnail["thumb"];
 
 ?>
-<div class="charitable-campaign-featured-image"><?php print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height ) ?></div>
 
 
-<!-- <div style="
-    background: url(&quot;https://bhpcommunitylegal.org/wp-content/uploads/2017/01/Miranda-1080x675.png&quot;);
-    position: relative;
-    height: 400px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    ">
-
-    <h1 class="entry-title" style="
+<div class="charitable-campaign-featured-image" style="
+  background: url(<?php get_the_post_thumbnail_url() ?>)
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;">
+  <!-- <?php print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height ) ?> -->
+  get_the_post_thumbnail_url
+  <h1 class="entry-title" style="
     position: absolute;
     bottom: 10px;
     left: 10px;
     color: white;
     box-shadow: black;
     /* background: red; */
-    text-shadow: 1px 1px #000000;
-">Lena is ready to leave everything behind to keep her family safe.</h1></div> -->
+    text-shadow: 1px 1px #000000;">
+    <?php the_title() ?>
+  </h1>
+</div>
