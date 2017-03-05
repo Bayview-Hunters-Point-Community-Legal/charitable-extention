@@ -42,11 +42,6 @@ $campaign = charitable_get_current_campaign();
 				<article id="post-<?php the_ID(); ?>" <?php post_class( 'et_pb_post' . $additional_class ); ?>>
 					<div class="et_post_meta_wrapper">
 
-						<!-- <div class="main-banner">
-							<h1 class="entry-title"><?php the_title() ?></h1>
-
-						</div> -->
-
 						<?php
 
 						if ( ! post_password_required() ) :
