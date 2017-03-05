@@ -18,10 +18,11 @@ $thumb = $thumbnail["thumb"];
 ?>
 
 <div class="charitable-campaign-featured-image" style="
-  background: url(<?php the_post_thumbnail_url( 'full' ); ?>)
+  background: url('<?php the_post_thumbnail_url( 'full' ); ?>');
   position: relative;
   height: 400px;
   background-size: cover;
+  background-color: green;
   background-repeat: no-repeat;">
   <?php print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height ) ?>
   <h1 class="entry-title" style="
@@ -30,7 +31,7 @@ $thumb = $thumbnail["thumb"];
     left: 10px;
     color: white;
     box-shadow: black;
-    /* background: red; */
+    background: red;
     text-shadow: 1px 1px #000000;">
     <?php the_title() ?>
   </h1>
