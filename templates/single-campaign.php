@@ -25,7 +25,11 @@ $campaign = charitable_get_current_campaign();
 
 ?>
 <div id="main-content">
+
+<?php charitable_extension_template_campaign_featured_image() ?>
+
 	<div class="container">
+
 		<div id="content-area" class="clearfix">
 			<div id="left-area">
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -37,7 +41,7 @@ $campaign = charitable_get_current_campaign();
 				?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class( 'et_pb_post' . $additional_class ); ?>>
 					<div class="et_post_meta_wrapper">
-						<h1 class="entry-title"><?php the_title() ?></h1>
+
 						<?php
 
 						if ( ! post_password_required() ) :

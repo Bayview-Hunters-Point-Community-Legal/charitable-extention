@@ -29,7 +29,6 @@ add_action( 'charitable_campaign_content_before', 'charitable_extension_template
  * @see     charitable_extension_template_campaign_percentage_raised
  * @see     charitable_extension_template_campaign_time_left
  */
-add_action( 'charitable_campaign_summary_before', 'charitable_extension_template_campaign_featured_image', 4 );
 add_action( 'charitable_campaign_summary', 'charitable_extension_template_campaign_percentage_raised', 4 );
 add_action( 'charitable_campaign_summary', 'charitable_extension_template_campaign_time_left', 10 );
 
@@ -41,3 +40,4 @@ add_action( 'charitable_campaign_summary', 'charitable_extension_template_campai
 add_action( 'charitable_campaign_content_loop_after', 'charitable_extension_template_campaign_loop_donation_stats', 14 );
 remove_action( 'charitable_campaign_content_loop_after', 'charitable_template_campaign_loop_more_link', 10, 2 );
 add_action( 'charitable_campaign_content_loop_after', 'charitable_extension_template_campaign_loop_more_link', 15, 2 );
+

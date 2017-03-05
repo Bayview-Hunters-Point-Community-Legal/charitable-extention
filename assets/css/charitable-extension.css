@@ -1,7 +1,3 @@
-.charitable-campaign-featured-image {
-  float: left;
-  max-width: 65%; }
-
 .campaign-summary {
   float: right;
   padding: 0;
@@ -26,9 +22,6 @@
   clear: both; }
 .single-campaign .campaign-description {
   margin: 30px 0; }
-.single-campaign.et_full_width_page .charitable-campaign-featured-image {
-  float: left;
-  max-width: 65%; }
 .single-campaign.et_full_width_page .campaign-summary {
   float: left;
   width: 35%;
@@ -135,5 +128,18 @@
   border-color: rgba(255, 255, 255, 0.1); }
   .et_pb_bg_layout_dark .campaign-loop .campaign.hentry .campaign-donation-stats {
     background-color: rgba(255, 255, 255, 0.1); }
+
+.charitable-campaign-featured-image {
+  position: relative;
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+#main-content .charitable-campaign-title {
+  padding-top: 0px;
+  top: -60px;
+  font-size: 30px;
+  color: white;
+  text-shadow: 1px 1px #000; }
 
 /*# sourceMappingURL=charitable-extension.css.map */
