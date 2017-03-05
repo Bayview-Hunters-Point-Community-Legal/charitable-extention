@@ -13,6 +13,6 @@
 <div class="charitable-campaign-featured-image" style="background: url('<?php the_post_thumbnail_url( 'full' ); ?>');">
 </div>
 
-<div id="charitable-campaign-title-container" class="container charitable-campaign-title-container">
+<div class="container charitable-campaign-title">
   <?php the_title() ?>
 </div>
