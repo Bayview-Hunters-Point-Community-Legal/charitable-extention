@@ -25,6 +25,9 @@ $campaign = charitable_get_current_campaign();
 
 ?>
 <div id="main-content">
+
+<?php charitable_extension_template_campaign_featured_image() ?>
+
 	<div class="container">
 
 		<div id="content-area" class="clearfix">

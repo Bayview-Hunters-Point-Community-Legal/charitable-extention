@@ -17,15 +17,13 @@ $thumb = $thumbnail["thumb"];
 
 ?>
 
-
 <div class="charitable-campaign-featured-image" style="
-  background: url(<?php get_the_post_thumbnail_url() ?>)
+  background: url(<?php the_post_thumbnail_url( 'full' ); ?>)
   position: relative;
   height: 400px;
   background-size: cover;
   background-repeat: no-repeat;">
-  <!-- <?php print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height ) ?> -->
-  get_the_post_thumbnail_url
+  <?php print_thumbnail( $thumb, $thumbnail["use_timthumb"], $titletext, $width, $height ) ?>
   <h1 class="entry-title" style="
     position: absolute;
     bottom: 10px;

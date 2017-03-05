@@ -19,8 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @see     et_divi_post_meta
  * @see     charitable_extension_template_campaign_summary
  */
+// add_action( 'charitable_campaign_content_before', 'charitable_extension_template_campaign_featured_image', 1 );
 add_action( 'charitable_campaign_content_before', 'et_divi_post_meta', 1 );
-add_action( 'charitable_campaign_content_before', 'charitable_extension_template_campaign_featured_image', 2 );
 add_action( 'charitable_campaign_content_before', 'charitable_extension_template_campaign_summary', 6 );
 
 /**
