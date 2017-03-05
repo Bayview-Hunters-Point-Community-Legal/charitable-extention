@@ -129,4 +129,20 @@
   .et_pb_bg_layout_dark .campaign-loop .campaign.hentry .campaign-donation-stats {
     background-color: rgba(255, 255, 255, 0.1); }
 
+.charitable-campaign-featured-image {
+  position: relative;
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.charitable-campaign-title-container {
+  font-size: 30px;
+  position: absolute;
+  top: -60px;
+  color: white;
+  text-shadow: 1px 1px #000; }
+
+#main-content .charitable-campaign-title-container {
+  padding-bottom: -10px; }
+
 /*# sourceMappingURL=charitable-extension.css.map */
