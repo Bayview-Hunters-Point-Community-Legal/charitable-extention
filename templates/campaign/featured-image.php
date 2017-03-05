@@ -10,9 +10,15 @@
 
 ?>
 
-<div class="charitable-campaign-featured-image" style="background: url('<?php the_post_thumbnail_url( 'full' ); ?>');">
+<div class="charitable-campaign-featured-image" style="background-image: url('<?php the_post_thumbnail_url( 'full' ); ?>');">
 </div>
 
 <div class="container charitable-campaign-title">
-  <?php the_title() ?>
+</div>
+
+<div class="container charitable-campaign-title">
+  <!-- Div to enable text to fill in above title div -->
+  <div class="charitable-campaign-title-text">
+    <?php the_title() ?>
+  </div>
 </div>
