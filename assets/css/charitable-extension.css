@@ -138,15 +138,25 @@
 
 #main-content .charitable-campaign-title {
   padding-top: 0px;
-  top: -20px;
+  top: -50px;
   height: 0px;
-  font-size: 30px;
+  font-size: 40px;
+  font-weight: bold;
   line-height: 1.2;
   color: white;
-  text-shadow: 1px 1px #000; }
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.4),
+               0px 8px 13px rgba(0, 0, 0, 0.1),
+               0px 18px 23px rgba(0, 0, 0, 0.1); }
 
+#main-content .charitable-campaign-title-text {
+  position: absolute;
+  width: 65%;  /* Size to be same as main container */
+  bottom: 0; }
+
+@media (max-width: 640px) {
   #main-content .charitable-campaign-title-text {
-    position: absolute;
-    bottom: 0; }
+    /* Size to be same as main container */
+    width: 100%;}
+}
 
 /*# sourceMappingURL=charitable-extension.css.map */
